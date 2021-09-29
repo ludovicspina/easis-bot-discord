@@ -27,6 +27,12 @@ client.on("messageCreate", message => {
     }
 })
 
+client.on("messageCreate", message => {
+    if (message.content === "Mélanchon, je t'invoque !") {
+        message.channel.send("La république, c'est moi!")
+    }
+})
+
 // client.on("messageCreate", message => {
 //     if (!message.author.bot) {
 //         if (message.content.includes("tg" || "connard" || "pute")) {
