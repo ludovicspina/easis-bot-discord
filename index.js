@@ -30,8 +30,8 @@ client.on("messageCreate", message => {
 
 client.on("messageCreate", message =>{
     if (!message.author.bot) {
-        if (message.content.includes("arabe")){
-            message.channel.send("https://www.challenges.fr/assets/img/2017/07/02/cover-r4x3w1000-5958aba3c97c2-000-pz7n1-1.jpg")
+        if (message.content.includes("arabe" || "arabes" || "Arabe" || "Arabes")){
+            message.channel.send("https://ludovicspina.fr/bot-img/melenchon.jpg")
         }
     }
 })
