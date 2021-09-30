@@ -27,14 +27,20 @@ client.on("messageCreate", message => {
     }
 })
 
+let armus = ["arabe", "arabes", "Arabe", "Arabes", "Musulman", "Musulmans", "musulman", "musulmans", "bougnoule", "bougnoules", "Bougnoule", "Bougnoules", "Zemmour", "zemmour"]
 
-client.on("messageCreate", message =>{
+client.on("messageCreate", message => {
     if (!message.author.bot) {
-        if (message.content.includes("arabe" || "arabes" || "Arabe" || "Arabes")){
-            message.channel.send("https://ludovicspina.fr/bot-img/melenchon.jpg")
+        for (let i = 0; i < armus.length; i++) {
+            if (message.content.includes(armus[i])) {
+                message.channel.send("https://ludovicspina.fr/bot-img/melenchon.jpg")
+                return
+            }
         }
     }
 })
+
+
 
 client.on("messageCreate", message => {
     if (message.content === "Mélanchon, je t'invoque !") {
