@@ -8,7 +8,7 @@ client.once('ready', () => {
 });
 
 client.on("messageCreate", message => {
-    const rand = Math.floor(Math.random() * 200);
+    const rand = Math.floor(Math.random() * 100);
     if (!message.author.bot) {
         switch (rand) {
             case 20:
