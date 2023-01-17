@@ -19,7 +19,7 @@ client.on("messageCreate", message => {
 client.on("messageCreate", message => {
     if (message.channelId === "1010353220960407597" || message.channelId === "1061570116728401970" || message.channelId === "1001730557832593530") {
         if (message.content.includes("314646477215629323")) {
-            message.channel.send("https://tenor.com/fr/view/north-korea-dprk-kim-jong-un-based-gif-23824457")
+            message.channel.send("https://tenor.com/view/north-korea-dprk-kim-jong-un-based-gif-23824457")
         }
     }
 })
