@@ -1,11 +1,13 @@
 const {Client, Intents} = require('discord.js');
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
+const fetch = require("node-fetch");
 
 const token = 'MTA2NDkxODM2NDYwNDA4NDIyNQ.G47VtM.HXTWg5gClPzYT8OpB-SV0QKTYWzNITdDJK0zY8'
 
 client.once('ready', () => {
     console.log("Time to ban.");
 });
+
 
 // client.on("messageCreate", message => {
 //     if (message.channelId === "1010353220960407597" || message.channelId === "1061570116728401970" || message.channelId === "1001730557832593530" || message.channelId === "1064938100280807474") {
@@ -27,7 +29,7 @@ client.once('ready', () => {
 
 client.on("messageCreate", message => {
     if (message.channelId === "1064938100280807474") {
-        if (message.content.includes("cooldowns")) {
+        if (message.content === "$cooldowns") {
             fetch('https://opensheet.elk.sh/1Om7FhiE9yNgUN7PLGJ0f9Xqux7x03qP4tUBYe751qP0/RedM')
                 .then(result => result.json())
                 .then((output) => {
