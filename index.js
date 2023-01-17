@@ -1,6 +1,5 @@
 const {Client, Intents} = require('discord.js');
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
-import fetch from 'node-fetch';
 
 const token = 'MTA2NDkxODM2NDYwNDA4NDIyNQ.G47VtM.HXTWg5gClPzYT8OpB-SV0QKTYWzNITdDJK0zY8'
 
@@ -26,17 +25,29 @@ client.once('ready', () => {
 //     }
 // })
 
+let redArray = [];
+
+function getData() {
+
+
+}
+
 
 client.on("messageCreate", message => {
-    if (message.channelId === "1064938100280807474") {
-        if (message.content === "$cooldowns") {
-            fetch('https://opensheet.elk.sh/1Om7FhiE9yNgUN7PLGJ0f9Xqux7x03qP4tUBYe751qP0/RedM')
-                .then(result => result.json())
-                .then((output) => {
-                    message.channel.send(output)
-
-                }).catch(err => console.error(err));
-        }
+    if (message.content === "$cooldowns") {
+        fetch("https://opensheet.elk.sh/1Om7FhiE9yNgUN7PLGJ0f9Xqux7x03qP4tUBYe751qP0/CD%20RedM")
+            .then((response) => response.json())
+            .then((data) => {
+                let tabConstruit = [];
+                let base = [];
+                data.forEach(player => {
+                    if (player.etat_du_cooldown !== "Nouveau joueur") {
+                        tabConstruit += (player.participants_inscrits + ' ' + player.etat_du_cooldown + "\n")
+                    }
+                })
+                message.channel.send(tabConstruit)
+            })
+            .catch((error) => console.log("error"));
     }
 })
 
