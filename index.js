@@ -8,7 +8,7 @@ client.once('ready', () => {
 });
 
 client.on("messageCreate", message => {
-    if (message.channelId === "1010353220960407597" || message.channelId === "1061570116728401970") {
+    if (message.channelId === "1010353220960407597" || message.channelId === "1061570116728401970" || message.channelId === "1001730557832593530") {
         if (message.content.includes("312902889884352514")) {
             message.channel.send("IDENTIFIZIERT PAMPLER NICHT !!!")
             message.channel.send("https://tenor.com/view/ww2-croatia-gif-18606680")
