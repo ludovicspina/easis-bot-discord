@@ -117,12 +117,10 @@ client.on("messageCreate", message => {
 
         url += "&entry.656140026=" + loot
 
-
-
         message.channel.send({
             embeds: [{
                 type: "rich",
-                title: "Lien généré",
+                title: "Lien généré par " + message.author.username,
                 color: 0x890303,
                 description: "" + url,
                 footer: {
